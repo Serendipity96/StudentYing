@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, List, Avatar } from 'antd';
 
-import styles from './News.less';
 
 const data = [
   {
@@ -23,7 +22,7 @@ class News extends Component {
   render() {
     return (
       <div>
-        <Button icon="plus" type="primary">
+        <Button icon="plus" type="primary" href="/news/add">
           新增
         </Button>
         <List

@@ -1,0 +1,3 @@
+[submodule "jrtt-server"]
+	path = jrtt-server
+	url = https://github.com/leoppro/jrtt-server.git

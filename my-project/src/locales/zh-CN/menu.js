@@ -4,6 +4,8 @@ export default {
   'menu.register': '注册',
   'menu.register.result': '注册结果',
   'menu.news': '新闻管理',
+  'menu.news.add': '新增',
+  'menu.news.manage': '管理',
   'menu.category': '类别管理',
   'menu.comment': '评论管理',
   'menu.user': '用户管理',

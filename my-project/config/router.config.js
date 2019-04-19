@@ -23,29 +23,39 @@ export default [
     component: '../layouts/BasicLayout',
     Routes: ['src/pages/Authorized'],
     routes: [
-      // dashboard
-      { path: '/', redirect: '/news', authority: ['admin', 'user'] },
+      { path: '/', redirect: '/news/manage', authority: ['admin', 'user'] },
       {
-        path:"/news",
-        name:'news',
+        path: '/news',
+        name: 'news',
         icon: 'profile',
-        component: './News',
+        routes: [
+          {
+            path: '/news/manage',
+            name: 'manage',
+            component: './News',
+          },
+          {
+            path: '/news/add',
+            name: 'add',
+            component: './NewsAdd',
+          },
+        ],
       },
       {
-        path:"/category",
-        name:'category',
+        path: '/category',
+        name: 'category',
         icon: 'table',
         component: './Category',
       },
       {
-        path:"/comment",
-        name:'comment',
+        path: '/comment',
+        name: 'comment',
         icon: 'form',
         component: './Comment',
       },
       {
-        path:"/user",
-        name:'user',
+        path: '/user',
+        name: 'user',
         icon: 'user',
         component: './User',
       },
@@ -72,7 +82,7 @@ export default [
       //     },
       //   ],
       // },
-      // // forms
+      // forms
       // {
       //   path: '/form',
       //   icon: 'form',
