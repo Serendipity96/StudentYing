@@ -2,84 +2,105 @@
   <view class="bg">
     <view class="name">今日头条</view>
     <view class="search">
-       <view>
-         <image src="/images/icon/search.jpg" style="width:14px;height:14px"></image>
-       </view>
-       <view>
-         <input type="text" placeholder="搜你想要的"/>
-       </view>
+      <view>
+        <image src="/images/icon/search.jpg" style="width:14px;height:14px"></image>
+      </view>
+      <view>
+        <input type="text" placeholder="搜你想要的" />
+      </view>
     </view>
   </view>
 
   <view class="navbg">
     <view class="nav">
-       <scroll-view class="scroll-view_H" scroll-x="true">
-          <view class="scroll-view_H">
-             <view>
-               <view class="{{flag==0?'select':'normal'}}" id="0" bindtap="switchNav">推荐</view>
-             </view>
-             <view>
-               <view class="{{flag==1?'select':'normal'}}" id="1" bindtap="switchNav">热点</view>
-             </view>
-             <view>
-               <view class="{{flag==2?'select':'normal'}}" id="2" bindtap="switchNav">北京</view>
-             </view>
-             <view>
-               <view class="{{flag==3?'select':'normal'}}" id="3" bindtap="switchNav">社会</view>
-             </view>
-             <view>
-               <view class="{{flag==4?'select':'normal'}}" id="4" bindtap="switchNav">娱乐</view>
-             </view>
-             <view>
-               <view class="{{flag==5?'select':'normal'}}" id="5" bindtap="switchNav">问答</view>
-             </view>
-             <view>
-               <view class="{{flag==6?'select':'normal'}}" id="6" bindtap="switchNav">图片</view>
-             </view>
-             <view>
-               <view class="{{flag==7?'select':'normal'}}" id="7" bindtap="switchNav">科技</view>
-             </view>
-             <view>
-               <view class="{{flag==8?'select':'normal'}}" id="8" bindtap="switchNav">汽车</view>
-             </view>
-             <view>
-               <view class="{{flag==9?'select':'normal'}}" id="7" bindtap="switchNav">体育</view>
-             </view>
+      <scroll-view class="scroll-view_H" scroll-x="true">
+        <view class="scroll-view_H">
+          <view>
+            <view class="{{flag==0?'select':'normal'}}" id="0" bindtap="switchNav">推荐</view>
           </view>
-       </scroll-view>
+          <view>
+            <view class="{{flag==1?'select':'normal'}}" id="1" bindtap="switchNav">热点</view>
+          </view>
+          <view>
+            <view class="{{flag==2?'select':'normal'}}" id="2" bindtap="switchNav">北京</view>
+          </view>
+          <view>
+            <view class="{{flag==3?'select':'normal'}}" id="3" bindtap="switchNav">社会</view>
+          </view>
+          <view>
+            <view class="{{flag==4?'select':'normal'}}" id="4" bindtap="switchNav">娱乐</view>
+          </view>
+          <view>
+            <view class="{{flag==5?'select':'normal'}}" id="5" bindtap="switchNav">问答</view>
+          </view>
+          <view>
+            <view class="{{flag==6?'select':'normal'}}" id="6" bindtap="switchNav">图片</view>
+          </view>
+          <view>
+            <view class="{{flag==7?'select':'normal'}}" id="7" bindtap="switchNav">科技</view>
+          </view>
+          <view>
+            <view class="{{flag==8?'select':'normal'}}" id="8" bindtap="switchNav">汽车</view>
+          </view>
+          <view>
+            <view class="{{flag==9?'select':'normal'}}" id="7" bindtap="switchNav">体育</view>
+          </view>
+        </view>
+      </scroll-view>
     </view>
     <view class="add">+</view>
   </view>
+
   <swiper current="{{flag}}" style="height:800px;">
-     <swiper-item>
-        <include src="recommend.wxml"/>
-     </swiper-item>
-     <swiper-item>
-        我是热点内容
-     </swiper-item>
-     <swiper-item>
-        我是北京内容
-     </swiper-item>
-     <swiper-item>
-        我是社会内容
-     </swiper-item>
-     <swiper-item>
-        我是娱乐内容
-     </swiper-item>
-     <swiper-item>
-        我是问答内容
-     </swiper-item>
-     <swiper-item>
-        我是图片内容
-     </swiper-item>
-     <swiper-item>
-        我是科技内容
-     </swiper-item>
-     <swiper-item>
-        我是汽车内容
-     </swiper-item>
-     <swiper-item>
-        我是体育内容
-     </swiper-item>
+    <swiper-item>
+      <view wx:for="{{list}}" wx:key="{{item.id}}" data-id='{{item.id}}' wx:for-index="idx" wx:for-item="item" class="item" bindtap="seeDetail">
+        <view class="title">{{item.title}}</view>
+        <view class="pic">
+          <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+          <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+          <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+        </view>
+        <view class="info">
+          <view class="desc">
+            <text>{{item.author_name}}</text>
+            <text>{{item.comments_number}}评论</text>
+            <text>6分钟之前</text>
+          </view>
+          <view class="opr">
+            <view>x</view>
+          </view>
+        </view>
+        <view class="hr"></view>
+      </view>
+
+    </swiper-item>
+    <swiper-item>
+      <include src="recommend.wxml" />
+    </swiper-item>
+
+    <swiper-item>
+      我是北京内容
+    </swiper-item>
+    <swiper-item>
+      我是社会内容
+    </swiper-item>
+    <swiper-item>
+      我是娱乐内容
+    </swiper-item>
+    <swiper-item>
+      我是问答内容
+    </swiper-item>
+    <swiper-item>
+      我是图片内容
+    </swiper-item>
+    <swiper-item>
+      我是科技内容
+    </swiper-item>
+    <swiper-item>
+      我是汽车内容
+    </swiper-item>
+    <swiper-item>
+      我是体育内容
+    </swiper-item>
   </swiper>
 </view>

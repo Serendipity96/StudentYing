@@ -11,7 +11,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    const url = 'https://zrf.leop.pro/api/news/get?id='+ options.id
+    console.log(url)
+    let that = this
+    wx.request({
+      url: url,
+      method: 'GET',
+      success(res) {
+        let list = res.data
+        console.log(list)
+        
+      }
+    })
   },
 
   /**
