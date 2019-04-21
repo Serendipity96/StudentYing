@@ -15,7 +15,7 @@ Page({
   getNewsList: function () {
     let that = this
     wx.request({
-      url: 'https://zrf.leop.pro/api/news/list?length=15&top_news_id=10&category_id=1',
+      url: 'https://zrf.leop.pro/api/news/list?length=15',
       method: 'GET',
       success(res) {
         let list = res.data.data.list

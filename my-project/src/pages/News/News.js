@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Button, List, Avatar, Modal } from 'antd';
+import styles from './News.less'
 
-const url = 'http://localhost:8081/api/news/list?length=5&top_news_id=10&category_id=1';
+const url = 'https://zrf.leop.pro/api/news/list?length=10';
+const deleteUrl = 'https://zrf.leop.pro/api/news/delete?id=';
 const confirm = Modal.confirm;
 
 
@@ -52,6 +54,13 @@ class News extends Component {
         break;
       }
     }
+    const url = deleteUrl + id
+
+    fetch(url,{
+      method:'GET',
+      data:id,
+    })
+
     this.setState({
       list: list,
     });
@@ -65,7 +74,6 @@ class News extends Component {
 
   render() {
     const { list } = this.state;
-    console.log(list);
     return (
       <div>
         <Button icon="plus" type="primary" href="/news/add">
@@ -77,9 +85,9 @@ class News extends Component {
           renderItem={item => (
             <List.Item>
               <List.Item.Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>}
-                title={<a href="https://ant.design">{item.title}</a>}
-                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                avatar={<Avatar className={styles.fixImage} src="http://img2.imgtn.bdimg.com/it/u=2486077735,1432442113&fm=26&gp=0.jpg"/>}
+                title={<a>{item.title}</a>}
+                description={item.description}
               />
               <ul style={{ display: 'flex' }}>
                 <li style={{ marginLeft: 10 }}>

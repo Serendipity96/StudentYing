@@ -40,7 +40,7 @@ class UserLayout extends Component {
             <div className={styles.top}>
               <div className={styles.header}>
                 <Link to="/">
-                  <span className={styles.title}>用户登录</span>
+                  <span className={styles.title}>今日头条管理系统</span>
                 </Link>
               </div>
             </div>

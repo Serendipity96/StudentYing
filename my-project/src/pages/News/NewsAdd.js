@@ -3,8 +3,8 @@ import { Input, Select, Upload, message, Button, Icon } from 'antd';
 
 const { TextArea } = Input;
 const Option = Select.Option;
-const url = 'http://localhost:8081/api/news/edit';
-const detailUrl = 'http://localhost:8081/api/news/get';
+const url = 'https://zrf.leop.pro/api/news/edit';
+const detailUrl = 'https://zrf.leop.pro/api/news/get';
 
 class NewsAdd extends Component {
 
