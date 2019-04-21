@@ -21,7 +21,6 @@ Page({
         }
       },
       fail: function(res) {
-        console.log(res)
         wx.showToast({
           title: '登录失败',
         })

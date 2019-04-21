@@ -17,3 +17,183 @@
   </view>
 </view>
 <view class="hr"></view>
+
+<view class="item" bindtap="seeDetail">
+  <view class="title">开工红包哪家强？阿里最壕，腾讯像春运</view>
+  <view class="pic">
+    <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+  </view>
+  <view class="info">
+    <view class="desc">
+       <text>志趣科技</text>
+       <text>48评论</text>
+       <text>6分钟之前</text>
+    </view>
+    <view class="opr">
+      <view>x</view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class="item" bindtap="seeDetail">
+  <view class="title">开工红包哪家强？阿里最壕，腾讯像春运</view>
+  <view class="pic">
+    <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+  </view>
+  <view class="info">
+    <view class="desc">
+       <text>志趣科技</text>
+       <text>48评论</text>
+       <text>6分钟之前</text>
+    </view>
+    <view class="opr">
+      <view>x</view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class="item" bindtap="seeDetail">
+  <view class="title">开工红包哪家强？阿里最壕，腾讯像春运</view>
+  <view class="pic">
+    <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+  </view>
+  <view class="info">
+    <view class="desc">
+       <text>志趣科技</text>
+       <text>48评论</text>
+       <text>6分钟之前</text>
+    </view>
+    <view class="opr">
+      <view>x</view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class="item" bindtap="seeDetail">
+  <view class="title">开工红包哪家强？阿里最壕，腾讯像春运</view>
+  <view class="pic">
+    <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+  </view>
+  <view class="info">
+    <view class="desc">
+       <text>志趣科技</text>
+       <text>48评论</text>
+       <text>6分钟之前</text>
+    </view>
+    <view class="opr">
+      <view>x</view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class="item" bindtap="seeDetail">
+  <view class="title">开工红包哪家强？阿里最壕，腾讯像春运</view>
+  <view class="pic">
+    <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+  </view>
+  <view class="info">
+    <view class="desc">
+       <text>志趣科技</text>
+       <text>48评论</text>
+       <text>6分钟之前</text>
+    </view>
+    <view class="opr">
+      <view>x</view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class="item" bindtap="seeDetail">
+  <view class="title">开工红包哪家强？阿里最壕，腾讯像春运</view>
+  <view class="pic">
+    <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+  </view>
+  <view class="info">
+    <view class="desc">
+       <text>志趣科技</text>
+       <text>48评论</text>
+       <text>6分钟之前</text>
+    </view>
+    <view class="opr">
+      <view>x</view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class="item" bindtap="seeDetail">
+  <view class="title">开工红包哪家强？阿里最壕，腾讯像春运</view>
+  <view class="pic">
+    <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+  </view>
+  <view class="info">
+    <view class="desc">
+       <text>志趣科技</text>
+       <text>48评论</text>
+       <text>6分钟之前</text>
+    </view>
+    <view class="opr">
+      <view>x</view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class="item" bindtap="seeDetail">
+  <view class="title">开工红包哪家强？阿里最壕，腾讯像春运</view>
+  <view class="pic">
+    <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+  </view>
+  <view class="info">
+    <view class="desc">
+       <text>志趣科技</text>
+       <text>48评论</text>
+       <text>6分钟之前</text>
+    </view>
+    <view class="opr">
+      <view>x</view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class="item" bindtap="seeDetail">
+  <view class="title">开工红包哪家强？阿里最壕，腾讯像春运</view>
+  <view class="pic">
+    <image src="/images/news/1.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/2.jpg" style="width:30%;height:69px;"></image>
+    <image src="/images/news/3.jpg" style="width:30%;height:69px;"></image>
+  </view>
+  <view class="info">
+    <view class="desc">
+       <text>志趣科技</text>
+       <text>48评论</text>
+       <text>6分钟之前</text>
+    </view>
+    <view class="opr">
+      <view>x</view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
