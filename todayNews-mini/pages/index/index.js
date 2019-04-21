@@ -9,7 +9,6 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log(options)
     this.getNewsList()
   },
 
@@ -20,7 +19,6 @@ Page({
       method: 'GET',
       success(res) {
         let list = res.data.data.list
-        console.log(list)
         that.setData({
           list: list
         })

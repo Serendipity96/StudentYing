@@ -12,15 +12,12 @@ Page({
    */
   onLoad: function (options) {
     const url = 'https://zrf.leop.pro/api/news/get?id='+ options.id
-    console.log(url)
     let that = this
     wx.request({
       url: url,
       method: 'GET',
       success(res) {
-        let list = res.data
-        console.log(list)
-        
+        that.setData({data:res.data.data})
       }
     })
   },
