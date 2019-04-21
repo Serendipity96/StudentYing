@@ -16,6 +16,7 @@
     </view>
   </view>
   <view class="article">
+  <image src="/images/news/3.jpg" style="width:300px;height:180px;"></image>
     <view>
       {{data.text}}
     </view>
