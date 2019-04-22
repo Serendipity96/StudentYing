@@ -13,42 +13,11 @@
 
   <view class="navbg">
     <view class="nav">
-      <scroll-view class="scroll-view_H" scroll-x="true">
-        <view class="scroll-view_H">
-          <view>
-            <view class="{{flag==0?'select':'normal'}}" id="0" bindtap="switchNav">推荐</view>
+      <scroll-view class="scroll-view_H" scroll-x style="width: auto;overflow:hidden;">
+          <view wx:for="{{category}}" wx:key="{{item.id}}" wx:for-index="idx" wx:for-item="item" class="{{flag==idx?'select':'normal'}}" data-id="{{item.id}}" data-idx="{{idx}}" bindtap="switchNav">{{item.name}}
           </view>
-          <view>
-            <view class="{{flag==1?'select':'normal'}}" id="1" bindtap="switchNav">热点</view>
-          </view>
-          <view>
-            <view class="{{flag==2?'select':'normal'}}" id="2" bindtap="switchNav">北京</view>
-          </view>
-          <view>
-            <view class="{{flag==3?'select':'normal'}}" id="3" bindtap="switchNav">社会</view>
-          </view>
-          <view>
-            <view class="{{flag==4?'select':'normal'}}" id="4" bindtap="switchNav">娱乐</view>
-          </view>
-          <view>
-            <view class="{{flag==5?'select':'normal'}}" id="5" bindtap="switchNav">问答</view>
-          </view>
-          <view>
-            <view class="{{flag==6?'select':'normal'}}" id="6" bindtap="switchNav">图片</view>
-          </view>
-          <view>
-            <view class="{{flag==7?'select':'normal'}}" id="7" bindtap="switchNav">科技</view>
-          </view>
-          <view>
-            <view class="{{flag==8?'select':'normal'}}" id="8" bindtap="switchNav">汽车</view>
-          </view>
-          <view>
-            <view class="{{flag==9?'select':'normal'}}" id="7" bindtap="switchNav">体育</view>
-          </view>
-        </view>
       </scroll-view>
     </view>
-    <view class="add">+</view>
   </view>
 
   <swiper current="{{flag}}" style="height:900px;">
@@ -82,28 +51,28 @@
     </swiper-item>
 
     <swiper-item>
-      我是北京内容
+      内容
     </swiper-item>
     <swiper-item>
-      我是社会内容
+      内容
     </swiper-item>
     <swiper-item>
-      我是娱乐内容
+      内容
     </swiper-item>
     <swiper-item>
-      我是问答内容
+      内容
     </swiper-item>
     <swiper-item>
-      我是图片内容
+      内容
     </swiper-item>
     <swiper-item>
-      我是科技内容
+      内容
     </swiper-item>
     <swiper-item>
-      我是汽车内容
+      内容
     </swiper-item>
     <swiper-item>
-      我是体育内容
+      内容
     </swiper-item>
   </swiper>
 </view>

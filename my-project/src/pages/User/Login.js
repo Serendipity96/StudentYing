@@ -5,6 +5,7 @@ import Link from 'umi/link';
 import { Checkbox, Alert, message, Icon } from 'antd';
 import Login from '@/components/Login';
 import styles from './Login.less';
+import { setAuthority } from '@/utils/authority';
 
 const { Tab, UserName, Password, Mobile, Captcha, Submit } = Login;
 
@@ -16,6 +17,8 @@ class LoginPage extends Component {
   state = {
     type: 'account',
     autoLogin: true,
+    name: '',
+    pwd: '',
   };
 
   onTabChange = type => {
@@ -41,18 +44,41 @@ class LoginPage extends Component {
     });
 
   handleSubmit = (err, values) => {
-    const { type } = this.state;
-    if (!err) {
-      const { dispatch } = this.props;
-      dispatch({
-        type: 'login/login',
-        payload: {
-          ...values,
-          type,
-        },
-      });
-    }
+    console.log(values)
+    const that = this
+    const url = 'https:zrf.leop.pro/api/author/login?name='+values.userName+'&password='+values.password
+    fetch(url, {
+      method:'GET'
+    }).then((res)=> res.json())
+      .then(res => {
+      console.log(res)
+      if(res.status === 200){
+        setAuthority('admin');
+        window.location.href = '/news/manage';
+      }else{
+        const { type } = that.state;
+        if (!err) {
+          const { dispatch } = that.props;
+          dispatch({
+            type: 'login/login',
+            payload: {
+              ...values,
+              type,
+            },
+          });
+        }
+        that.renderMessage(200)
+      }
+    })
   };
+
+  getUserName(e) {
+    this.setState({ name: e.target.name });
+  }
+
+  getPwd(e) {
+    this.setState({ pwd: e.target.name });
+  }
 
   changeAutoLogin = e => {
     this.setState({
@@ -61,7 +87,7 @@ class LoginPage extends Component {
   };
 
   renderMessage = content => (
-    <Alert style={{ marginBottom: 24 }} message={content} type="error" showIcon />
+    <Alert style={{ marginBottom: 24 }} message='用户名/密码错误' type="error" showIcon/>
   );
 
   render() {
@@ -79,10 +105,11 @@ class LoginPage extends Component {
         >
           <Tab key="account" tab={formatMessage({ id: 'app.login.tab-login-credentials' })}>
             {login.status === 'error' &&
-              login.type === 'account' &&
-              !submitting &&
-              this.renderMessage(formatMessage({ id: 'app.login.message-invalid-credentials' }))}
+            login.type === 'account' &&
+            !submitting &&
+            this.renderMessage(formatMessage({ id: 'app.login.message-invalid-credentials' }))}
             <UserName
+              onChange={this.getUserName.bind(this)}
               name="userName"
               placeholder={`${formatMessage({ id: 'app.login.userName' })}: admin or user`}
               rules={[
@@ -93,6 +120,7 @@ class LoginPage extends Component {
               ]}
             />
             <Password
+              onChange={this.getPwd.bind(this)}
               name="password"
               placeholder={`${formatMessage({ id: 'app.login.password' })}: admin`}
               rules={[
@@ -109,11 +137,11 @@ class LoginPage extends Component {
           </Tab>
           <Tab key="mobile" tab={formatMessage({ id: 'app.login.tab-login-mobile' })}>
             {login.status === 'error' &&
-              login.type === 'mobile' &&
-              !submitting &&
-              this.renderMessage(
-                formatMessage({ id: 'app.login.message-invalid-verification-code' })
-              )}
+            login.type === 'mobile' &&
+            !submitting &&
+            this.renderMessage(
+              formatMessage({ id: 'app.login.message-invalid-verification-code' }),
+            )}
             <Mobile
               name="mobile"
               placeholder={formatMessage({ id: 'form.phone-number.placeholder' })}
@@ -145,22 +173,22 @@ class LoginPage extends Component {
           </Tab>
           <div>
             <Checkbox checked={autoLogin} onChange={this.changeAutoLogin}>
-              <FormattedMessage id="app.login.remember-me" />
+              <FormattedMessage id="app.login.remember-me"/>
             </Checkbox>
             <a style={{ float: 'right' }} href="">
-              <FormattedMessage id="app.login.forgot-password" />
+              <FormattedMessage id="app.login.forgot-password"/>
             </a>
           </div>
           <Submit loading={submitting}>
-            <FormattedMessage id="app.login.login" />
+            <FormattedMessage id="app.login.login"/>
           </Submit>
           <div className={styles.other}>
-            <FormattedMessage id="app.login.sign-in-with" />
-            <Icon type="alipay-circle" className={styles.icon} theme="outlined" />
-            <Icon type="taobao-circle" className={styles.icon} theme="outlined" />
-            <Icon type="weibo-circle" className={styles.icon} theme="outlined" />
+            <FormattedMessage id="app.login.sign-in-with"/>
+            <Icon type="alipay-circle" className={styles.icon} theme="outlined"/>
+            <Icon type="taobao-circle" className={styles.icon} theme="outlined"/>
+            <Icon type="weibo-circle" className={styles.icon} theme="outlined"/>
             <Link className={styles.register} to="/user/register">
-              <FormattedMessage id="app.login.signup" />
+              <FormattedMessage id="app.login.signup"/>
             </Link>
           </div>
         </Login>

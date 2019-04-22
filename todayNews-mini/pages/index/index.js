@@ -5,11 +5,31 @@ Page({
   data: {
     flag: 0,
     list: [],
-    topNewsId: -1
+    topNewsId: -1,
+    category:[]
   },
 
   onLoad: function(options) {
+    this.getCategory()
     this.getNewsList()
+  },
+
+  getCategory(){
+    let that = this
+    const url = 'https://zrf.leop.pro/api/category/list'
+    wx.request({
+      url: url,
+      method: 'GET',
+      success(res) {
+          that.setData({
+            category:res.data.data
+          })
+          console.log(that.data)
+      },
+      fail(err) {
+        console.log(err)
+      },
+    })
   },
 
   getNewsList: function() {
@@ -62,13 +82,13 @@ Page({
   },
 
   switchNav: function(e) {
-    var id = e.target.id;
+    var idx = e.target.dataset.idx;
     var page = this;
-    if (this.data.flag == id) {
+    if (this.data.flag == idx) {
       return false;
     } else {
       page.setData({
-        flag: id
+        flag: idx
       });
     }
   },
